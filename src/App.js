@@ -3,14 +3,9 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import HomePage from './pages/hompage/homepage.component';
+import ShopData from './pages/shop/shop.component.jsx'
 
 import './App.css';
-
-const HatsPage = () => (
-  <div>
-    <h1>HATS PAGE</h1>
-  </div>
-)
 
 class App extends React.Component {
   render() {
@@ -18,7 +13,7 @@ class App extends React.Component {
       <div>
         <Switch>
           <Route exact path='/' component={HomePage} />
-          <Route path='/shop/hats' component={HatsPage} />
+          <Route path='/shop' component={ShopData} />
         </Switch>
       </div>
     );
