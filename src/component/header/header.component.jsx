@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import './header.styles.scss';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
@@ -19,12 +20,16 @@ const Header = ({currentUser}) => (
             </Link>
             {
                 currentUser ?
-                <div className="option" onClick={()=> auth.signOut()}>Sign Out</div>
+                (<div className="option" onClick={()=> auth.signOut()}>Sign Out</div>)
                 :
-                <Link className="option" to='/signin'>Sign in</Link>
+                (<Link className="option" to='/signin'>Sign in</Link>)
             }
         </div>
     </div>
 )
 
-export default Header;
+const mapStateToPops = state => ({
+    currentUser: state.user.currentUser
+});
+
+export default connect(mapStateToPops)(Header);
