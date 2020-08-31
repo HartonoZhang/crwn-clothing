@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import {createStructuredSelector} from 'reselect';
 
 import HomePage from './pages/hompage/homepage.component';
-import ShopData from './pages/shop/shop.component';
+import ShopPage from './pages/shop/shop.component';
 import SignInAndSignUp from './pages/sign-in-and-sign-out/sign-in-and-sign-out.component';
 import Header from './component/header/header.component';
 import CheckOutPage from './pages/checkout/checkout.component';
@@ -43,7 +43,7 @@ class App extends React.Component {
         <Header />
         <Switch>
           <Route exact path='/' component={HomePage} />
-          <Route path='/shop' component={ShopData} />
+          <Route path='/shop' component={ShopPage} />
           <Route exact path='/checkout' component={CheckOutPage} />
           <Route exact path='/signin' render={() => this.props.currentUser? (<Redirect to='/' />) : (<SignInAndSignUp />)} />
         </Switch>
